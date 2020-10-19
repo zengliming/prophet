@@ -1,0 +1,15 @@
+{
+  "properties": [
+    {
+      "name": "nacos.config.gateway.router.dataId",
+      "type": "java.lang.String",
+      "defaultValue": "${spring.application.name.yaml}",
+      "description": "Description for nacos.config.gateway.router.dataId."
+    },
+    {
+      "name": "nacos.config.gateway.route.groupId",
+      "type": "java.lang.String",
+      "defaultValue": "DEFAULT_GROUP",
+      "description": "Description for nacos.config.gateway.route.groupId."
+    }
+  ] }

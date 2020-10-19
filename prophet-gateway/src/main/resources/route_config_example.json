@@ -1,0 +1,23 @@
+[
+  {
+    "id": "prophet-authority-route",
+    "order": 0,
+    "predicates": [
+      {
+        "name": "Path",
+        "args": {
+          "pattern": "/authority/**"
+        }
+      }
+    ],
+    "filters": [
+      {
+        "name": "StripPrefix",
+        "args": {
+          "_genkey_0": "1"
+        }
+      }
+    ],
+    "uri": "lb://prophet-authority"
+  }
+]

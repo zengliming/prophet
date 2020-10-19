@@ -1,0 +1,15 @@
+server:
+  port: 88
+spring:
+  application:
+    name: prophet-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        # dataId 为prophet-gateway.yaml
+        file-extension: yaml
+        prefix: ${spring.application.name}
+        group: DEFAULT_GROUP

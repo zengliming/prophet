@@ -1,0 +1,6 @@
+nacos:
+  config:
+    gateway:
+      route:
+        dataId: gateway-routes
+        groupId: DEFAULT_GROUP

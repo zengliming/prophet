@@ -1,0 +1,8 @@
+dependencies {
+    compile project(':prophet-commons')
+    compile('org.springframework.cloud:spring-cloud-starter-gateway')
+    compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config')
+    compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery')
+    compileOnly('org.springframework.boot:spring-boot-configuration-processor')
+    annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
+}
