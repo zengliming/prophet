@@ -12,14 +12,14 @@
  */
 
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {ConfigProvider, Dropdown, Menu} from '@alifd/next';
+import { connect } from 'react-redux';
+import { ConfigProvider, Dropdown, Menu } from '@alifd/next';
 import siteConfig from '../config';
-import {changeLanguage} from '@/reducers/locale';
+import { changeLanguage } from '@/reducers/locale';
 import PasswordReset from '../pages/AuthorityControl/UserManagement/PasswordReset';
-import {passwordReset} from '../reducers/authority';
+import { passwordReset } from '../reducers/authority';
 
 import './index.scss';
 
@@ -82,10 +82,10 @@ class Header extends React.Component {
     const { passwordResetUser = '' } = this.state;
     const BASE_URL = `https://nacos.io/${language.toLocaleLowerCase()}/`;
     const NAV_MENU = [
-      { id: 1, title: home, link: BASE_URL },
-      { id: 2, title: docs, link: `${BASE_URL}docs/what-is-nacos.html` },
-      { id: 3, title: blog, link: `${BASE_URL}blog/index.html` },
-      { id: 4, title: community, link: `${BASE_URL}community/index.html` },
+      // { id: 1, title: home, link: BASE_URL },
+      // { id: 2, title: docs, link: `${BASE_URL}docs/what-is-nacos.html` },
+      // { id: 3, title: blog, link: `${BASE_URL}blog/index.html` },
+      // { id: 4, title: community, link: `${BASE_URL}community/index.html` },
     ];
     return (
       <>

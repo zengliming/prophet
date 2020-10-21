@@ -10,6 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProphetCommonsApplication {
 
     public static void main(String[] args) {
-
+        // todo
     }
 }

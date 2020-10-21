@@ -8,6 +8,7 @@ import com.alibaba.nacos.api.NacosFactory;
 import com.alibaba.nacos.api.config.ConfigService;
 import com.alibaba.nacos.api.config.listener.Listener;
 import com.alibaba.nacos.api.exception.NacosException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.stereotype.Component;
@@ -22,6 +23,7 @@ import java.util.concurrent.Executor;
  * @author liming zeng
  * @create 2020-10-19 18:24
  */
+@Slf4j
 @Component
 public class DynamicRouterRunner implements CommandLineRunner {
 
@@ -42,19 +44,16 @@ public class DynamicRouterRunner implements CommandLineRunner {
         try {
             final ConfigService configService = NacosFactory.createConfigService(nacosConfigProperties.getServerAddr());
             String content = configService.getConfig(dataId, groupId, 5000L);
+            log.info("first get router config = {}", content);
             final List<RouteDefinition> definitions = JsonUtil.toList(content, RouteDefinition.class);
-            definitions.forEach(definition -> {
-                dynamicRouterService.update(definition);
-            });
+            definitions.forEach(definition -> dynamicRouterService.update(definition));
             configService.addListener(dataId, groupId, new Listener() {
                 @Override
                 public void receiveConfigInfo(String configInfo) {
+                    log.info("updated router config = {}", configInfo);
                     try {
                         Optional.ofNullable(JsonUtil.toList(configInfo, RouteDefinition.class)).ifPresent(routes ->
-                                routes.forEach(definition -> {
-                                    System.out.println("definition = " + definition);
-                                    dynamicRouterService.update(definition);
-                                })
+                                routes.forEach(definition -> dynamicRouterService.update(definition))
                         );
                     } catch (IOException e) {
                         e.printStackTrace();

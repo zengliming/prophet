@@ -12,9 +12,9 @@
  */
 
 import React from 'react';
-import {Button, ConfigProvider, Dialog, Field, Form, Input, Loading, Tab} from '@alifd/next';
-import {getParams, request} from '../../../globalLib';
-import {generateUrl} from '../../../utils/nacosutil';
+import { Button, ConfigProvider, Dialog, Field, Form, Input, Loading, Tab } from '@alifd/next';
+import { getParams, request } from '../../../globalLib';
+import { generateUrl } from '../../../utils/nacosutil';
 
 import './index.scss';
 import PropTypes from 'prop-types';

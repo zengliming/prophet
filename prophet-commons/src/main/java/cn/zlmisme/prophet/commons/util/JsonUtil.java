@@ -17,6 +17,8 @@ public class JsonUtil {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
+    private JsonUtil() { throw new IllegalStateException("Utility class");}
+
     public static String toStr(Object obj) {
         if (Objects.isNull(obj)) {
             return null;

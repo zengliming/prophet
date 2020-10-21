@@ -15,20 +15,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
-  ConfigProvider,
-  Dialog,
   Field,
   Form,
   Grid,
   Input,
   Loading,
-  Message,
   Pagination,
-  Switch,
   Table,
+  Dialog,
+  Message,
+  ConfigProvider,
+  Switch,
 } from '@alifd/next';
-import {request} from '../../../globalLib';
-import {generateUrl} from '../../../utils/nacosutil';
+import { request } from '../../../globalLib';
+import { generateUrl } from '../../../utils/nacosutil';
 import RegionGroup from '../../../components/RegionGroup';
 import EditServiceDialog from '../ServiceDetail/EditServiceDialog';
 import ShowServiceCodeing from 'components/ShowCodeing/ShowServiceCodeing';

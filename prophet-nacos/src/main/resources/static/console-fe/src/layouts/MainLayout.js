@@ -12,12 +12,12 @@
  */
 
 import React from 'react';
-import {withRouter} from 'react-router-dom';
-import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {ConfigProvider, Icon, Menu} from '@alifd/next';
+import { ConfigProvider, Icon, Menu } from '@alifd/next';
 import Header from './Header';
-import {getState} from '../reducers/base';
+import { getState } from '../reducers/base';
 import getMenuData from './menu';
 
 const { SubMenu, Item } = Menu;

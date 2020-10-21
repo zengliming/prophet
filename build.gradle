@@ -49,9 +49,17 @@ subprojects {
     }
 
     dependencies {
+        compile('org.projectlombok:lombok:1.18.8')
+        annotationProcessor('org.projectlombok:lombok:1.18.8')
+        compile('org.apache.commons:commons-lang3:3.11')
+        compile('commons-codec:commons-codec:1.15')
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }
+    }
+
+    test {
+        useJUnitPlatform()
     }
 
 }
