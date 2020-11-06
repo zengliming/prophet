@@ -4,3 +4,14 @@ nacos:
       route:
         dataId: gateway-routes
         groupId: DEFAULT_GROUP
+
+gateway:
+  blacklists:
+    - uri:
+        /authority/api/demo1
+      ips:
+        - 172.20.8.104
+    - uri:
+        /api/demo1
+      ips:
+        - 127.0.0.1

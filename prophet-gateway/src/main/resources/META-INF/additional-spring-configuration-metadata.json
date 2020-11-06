@@ -11,5 +11,10 @@
       "type": "java.lang.String",
       "defaultValue": "DEFAULT_GROUP",
       "description": "Description for nacos.config.gateway.route.groupId."
+    },
+    {
+      "name": "gateway.blacklists",
+      "type": "java.lang.String",
+      "description": "Description for gateway.blacklists."
     }
   ] }

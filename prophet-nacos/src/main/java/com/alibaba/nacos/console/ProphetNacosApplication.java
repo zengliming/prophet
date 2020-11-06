@@ -29,7 +29,7 @@ import java.util.Objects;
 @SpringBootApplication(scanBasePackages = "com.alibaba.nacos")
 @ServletComponentScan
 @EnableScheduling
-public class Nacos {
+public class ProphetNacosApplication {
 
     private static final String STANDALONE_KEY = "nacos.standalone";
 
@@ -37,6 +37,6 @@ public class Nacos {
         if (Objects.isNull(System.getProperty(STANDALONE_KEY))) {
             System.setProperty(STANDALONE_KEY, "true");
         }
-        SpringApplication.run(Nacos.class, args);
+        SpringApplication.run(ProphetNacosApplication.class, args);
     }
 }
