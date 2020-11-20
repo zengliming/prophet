@@ -13,3 +13,7 @@ spring:
         file-extension: yaml
         prefix: ${spring.application.name}
         group: DEFAULT_GROUP
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:9999

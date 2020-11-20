@@ -9,6 +9,10 @@ spring:
         server-addr: 127.0.0.1:8848
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
+    sentinel:
+      transport:
+        port: 8720
+        dashboard: localhost:9999
   datasource:
     url: jdbc:mysql://localhost:3306/authority?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root

@@ -3,4 +3,5 @@ include 'prophet-authority'
 include 'prophet-authority-api'
 include 'prophet-gateway'
 include 'prophet-nacos'
+include 'prophet-sentinel-dashboard'
 
