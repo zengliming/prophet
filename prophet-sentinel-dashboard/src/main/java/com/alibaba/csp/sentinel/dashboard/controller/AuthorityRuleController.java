@@ -88,9 +88,11 @@ public class AuthorityRuleController {
             List<AuthorityRuleEntity> rules = sentinelApiClient.fetchAuthorityRulesOfMachine(app, ip, port);
             if (rules.isEmpty()) {
                 rules = ruleProvider.getRules(app);
+                rules = repository.saveAll(rules);
                 publishRules(app, ip, port);
+            }else {
+                rules = repository.saveAll(rules);
             }
-            rules = repository.saveAll(rules);
             return Result.ofSuccess(rules);
         } catch (Throwable throwable) {
             logger.error("Error when querying authority rules", throwable);

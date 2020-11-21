@@ -1,12 +1,11 @@
 dependencies {
     compile(project(":prophet-commons"))
+    compile(project(":prophet-sentinel-common"))
     compile(project(":prophet-authority-api"))
     compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config')
     compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery')
     compile('org.springframework.cloud:spring-cloud-config-client')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('com.baomidou:mybatis-plus-boot-starter:3.4.0')
-    compile('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
-    compile('com.alibaba.csp:sentinel-datasource-nacos')
     runtimeOnly('mysql:mysql-connector-java')
 }

@@ -2,6 +2,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 buildscript {
     repositories {
+        mavenLocal()
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         mavenCentral()
     }
@@ -35,6 +36,7 @@ subprojects {
     compileJava.dependsOn(processResources)
 
     repositories {
+        mavenLocal()
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         mavenCentral()
     }

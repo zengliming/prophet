@@ -21,6 +21,7 @@ import java.util.List;
 import com.alibaba.csp.sentinel.dashboard.auth.AuthAction;
 import com.alibaba.csp.sentinel.dashboard.auth.AuthService;
 import com.alibaba.csp.sentinel.dashboard.auth.AuthService.PrivilegeType;
+import com.alibaba.csp.sentinel.dashboard.client.SentinelApiClient;
 import com.alibaba.csp.sentinel.util.StringUtil;
 
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.FlowRuleEntity;
@@ -160,7 +161,6 @@ public class FlowControllerV2 {
 
     @PutMapping("/rule/{id}")
     @AuthAction(AuthService.PrivilegeType.WRITE_RULE)
-
     public Result<FlowRuleEntity> apiUpdateFlowRule(@PathVariable("id") Long id,
                                                     @RequestBody FlowRuleEntity entity) {
         if (id == null || id <= 0) {

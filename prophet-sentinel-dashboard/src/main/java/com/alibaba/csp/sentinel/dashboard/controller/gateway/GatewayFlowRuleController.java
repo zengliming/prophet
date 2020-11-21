@@ -21,16 +21,20 @@ import com.alibaba.csp.sentinel.dashboard.auth.AuthService;
 import com.alibaba.csp.sentinel.dashboard.client.SentinelApiClient;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.gateway.GatewayFlowRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.gateway.GatewayParamFlowItemEntity;
+import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.FlowRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.discovery.MachineInfo;
 import com.alibaba.csp.sentinel.dashboard.domain.Result;
 import com.alibaba.csp.sentinel.dashboard.domain.vo.gateway.rule.AddFlowRuleReqVo;
 import com.alibaba.csp.sentinel.dashboard.domain.vo.gateway.rule.GatewayParamFlowItemVo;
 import com.alibaba.csp.sentinel.dashboard.domain.vo.gateway.rule.UpdateFlowRuleReqVo;
 import com.alibaba.csp.sentinel.dashboard.repository.gateway.InMemGatewayFlowRuleStore;
+import com.alibaba.csp.sentinel.dashboard.rule.DynamicRuleProvider;
+import com.alibaba.csp.sentinel.dashboard.rule.DynamicRulePublisher;
 import com.alibaba.csp.sentinel.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -59,6 +63,13 @@ public class GatewayFlowRuleController {
     @Autowired
     private SentinelApiClient sentinelApiClient;
 
+    @Autowired
+    @Qualifier("gatewayRuleNacosProvider")
+    private DynamicRuleProvider<List<GatewayFlowRuleEntity>> ruleProvider;
+    @Autowired
+    @Qualifier("gatewayRuleNacosPublisher")
+    private DynamicRulePublisher<List<GatewayFlowRuleEntity>> rulePublisher;
+
     @GetMapping("/list.json")
     @AuthAction(AuthService.PrivilegeType.READ_RULE)
     public Result<List<GatewayFlowRuleEntity>> queryFlowRules(String app, String ip, Integer port) {
@@ -75,7 +86,13 @@ public class GatewayFlowRuleController {
 
         try {
             List<GatewayFlowRuleEntity> rules = sentinelApiClient.fetchGatewayFlowRules(app, ip, port).get();
-            repository.saveAll(rules);
+            if (rules.isEmpty()) {
+                rules = ruleProvider.getRules(app);
+                repository.saveAll(rules);
+                publishRules(app, ip, port);
+            }else {
+                repository.saveAll(rules);
+            }
             return Result.ofSuccess(rules);
         } catch (Throwable throwable) {
             logger.error("query gateway flow rules error:", throwable);
@@ -426,6 +443,12 @@ public class GatewayFlowRuleController {
 
     private boolean publishRules(String app, String ip, Integer port) {
         List<GatewayFlowRuleEntity> rules = repository.findAllByMachine(MachineInfo.of(app, ip, port));
+        try {
+            rulePublisher.publish(app,rules);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
         return sentinelApiClient.modifyGatewayFlowRules(app, ip, port, rules);
     }
 }

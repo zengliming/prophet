@@ -15,6 +15,7 @@
  */
 package com.alibaba.csp.sentinel.dashboard.rule.nacos;
 
+import cn.zlmisme.prophet.commons.constants.GlobalConstants;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.AuthorityRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.FlowRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.rule.DynamicRulePublisher;
@@ -44,7 +45,7 @@ public class AuthorityRuleNacosPublisher implements DynamicRulePublisher<List<Au
         if (rules == null) {
             return;
         }
-        configService.publishConfig(app + NacosConfigUtil.AUTHORITY_DATA_ID_POSTFIX,
-            NacosConfigUtil.GROUP_ID, converter.convert(rules));
+        configService.publishConfig(app + GlobalConstants.AUTHORITY_DATA_ID_POSTFIX,
+            GlobalConstants.GROUP_ID, converter.convert(rules));
     }
 }

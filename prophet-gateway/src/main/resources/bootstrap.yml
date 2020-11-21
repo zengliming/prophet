@@ -17,9 +17,10 @@ spring:
       transport:
         dashboard: localhost:9999
       filter:
-        enabled: true
+        enabled: false
       eager: true
-
+  config:
+    location: classpath:sentinel.properties
 management:
   endpoints:
     web:

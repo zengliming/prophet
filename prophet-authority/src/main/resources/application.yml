@@ -14,15 +14,6 @@ spring:
         dashboard: localhost:9999
       # 开启懒加载
       eager: true
-      datasource:
-        ns:
-          nacos:
-            serverAdd: ${spring.cloud.nacos.discovery.server-addr}
-            dataId: ${spring.application.name}-flow-rules
-            groupId: DEFAULT_GROUP
-            rule_type: flow
-            dataType: json
-
   datasource:
     url: jdbc:mysql://localhost:3306/authority?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root

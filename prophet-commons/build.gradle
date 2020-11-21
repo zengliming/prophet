@@ -3,9 +3,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter')
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.boot:spring-boot-starter-json')
-    compile('org.springframework.boot:spring-boot-configuration-processor')
-    compile('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
-    compile('com.alibaba.csp:sentinel-web-servlet')
+    compileOnly('org.springframework.boot:spring-boot-configuration-processor')
+    annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
     compile('com.baomidou:mybatis-plus:3.4.0')
     compile('javax.servlet:javax.servlet-api:4.0.1')
 }

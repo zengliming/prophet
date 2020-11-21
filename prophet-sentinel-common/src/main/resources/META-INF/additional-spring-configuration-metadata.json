@@ -1,0 +1,39 @@
+{
+  "properties": [
+    {
+      "name": "spring.cloud.sentinel.rule.flow-data-id",
+      "type": "java.lang.String",
+      "description": "sentinel 流控规则.",
+      "defaultValue": "${spring.application.name}-flow-rules"
+    },
+    {
+      "name": "spring.cloud.sentinel.rule.authority-data-id",
+      "type": "java.lang.String",
+      "description": "sentinel 授权规则.",
+      "defaultValue": "${spring.application.name}-authority-rules"
+    },
+    {
+      "name": "spring.cloud.sentinel.rule.group-id",
+      "type": "java.lang.String",
+      "description": "sentinel groupId.",
+      "defaultValue": "SENTINEL_GROUP"
+    },
+    {
+      "name": "spring.cloud.sentinel.rule.degrade-data-id",
+      "type": "java.lang.String",
+      "description": "sentinel 降级规则.",
+      "defaultValue": "${spring.application.name}-degrade-rules"
+    },
+    {
+      "name": "spring.cloud.sentinel.rule.param-flow-data-id",
+      "type": "java.lang.String",
+      "description": "sentinel 热点规则.",
+      "defaultValue": "${spring.application.name}-param-flow-rules"
+    },
+    {
+      "name": "spring.cloud.sentinel.rule.system-data-id",
+      "type": "java.lang.String",
+      "description": "sentinel 系统规则.",
+      "defaultValue": "${spring.application.name}-system-rules"
+    }
+  ] }

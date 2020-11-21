@@ -1,0 +1,9 @@
+dependencies {
+    compile(project(":prophet-commons"))
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
+    compile('com.alibaba.csp:sentinel-datasource-nacos')
+    compile('com.alibaba.csp:sentinel-web-servlet')
+}
+
+compileJava.dependsOn(processResources)

@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    sentinel:
+      rule:
+        flow-data-id: ${spring.application.name}-flow-rules
+        authority-data-id: ${spring.application.name}-authority-rules
+        degrade-data-id: ${spring.application.name}-degrade-rules
+        param-flow-data-id: ${spring.application.name}-param-flow-rules
+        system-data-id: ${spring.application.name}-system-rules
+        group-id: SENTINEL_GROUP
