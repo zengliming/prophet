@@ -15,6 +15,8 @@ logging:
 sentinel:
   dashboard:
     version: 1.8.0
+  nacos:
+    serverAddr: localhost:8848
 server:
   servlet:
     session:
@@ -27,3 +29,7 @@ spring:
       charset: UTF-8
       enabled: true
       force: true
+  application:
+    name: prophet-sentinel-dashboard
+
+

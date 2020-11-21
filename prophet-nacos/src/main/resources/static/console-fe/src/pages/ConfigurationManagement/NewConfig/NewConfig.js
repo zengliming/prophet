@@ -15,11 +15,12 @@ import $ from 'jquery';
 import React from 'react';
 import PropTypes from 'prop-types';
 import SuccessDialog from '../../../components/SuccessDialog';
-import { getParams, setParams, request, aliwareIntl } from '../../../globalLib';
-import { generateUrl } from '../../../utils/nacosutil';
+import {aliwareIntl, getParams, request, setParams} from '../../../globalLib';
+import {generateUrl} from '../../../utils/nacosutil';
 import {
   Balloon,
   Button,
+  ConfigProvider,
   Dialog,
   Field,
   Form,
@@ -27,9 +28,8 @@ import {
   Input,
   Loading,
   Message,
-  Select,
   Radio,
-  ConfigProvider,
+  Select,
 } from '@alifd/next';
 import validateContent from 'utils/validateContent';
 

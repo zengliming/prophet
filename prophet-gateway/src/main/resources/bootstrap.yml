@@ -15,5 +15,13 @@ spring:
         group: DEFAULT_GROUP
     sentinel:
       transport:
-        port: 8719
         dashboard: localhost:9999
+      filter:
+        enabled: true
+      eager: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: /actuator/sentinel

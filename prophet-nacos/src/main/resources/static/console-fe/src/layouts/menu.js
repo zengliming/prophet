@@ -1,4 +1,4 @@
-import { isJsonString } from '../utils/nacosutil';
+import {isJsonString} from '../utils/nacosutil';
 
 const configurationMenu = {
   key: 'configurationManagementVirtual',

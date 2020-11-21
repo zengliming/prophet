@@ -30,7 +30,7 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpcore-nio:4.4.6'
     implementation 'com.alibaba:fastjson:1.2.75'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'com.alibaba.csp:sentinel-datasource-nacos:1.8.0'
+    implementation 'com.alibaba.csp:sentinel-datasource-nacos:1.8.0'
     testImplementation 'com.ctrip.framework.apollo:apollo-openapi:1.2.0'
     testImplementation 'org.apache.curator:curator-recipes:4.0.1'
     testImplementation 'junit:junit:4.12'

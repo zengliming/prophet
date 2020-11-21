@@ -16,17 +16,17 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import {routerReducer} from 'react-router-redux';
 import thunk from 'redux-thunk';
-import { Provider, connect } from 'react-redux';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { ConfigProvider, Loading } from '@alifd/next';
+import {connect, Provider} from 'react-redux';
+import {HashRouter, Redirect, Route, Switch} from 'react-router-dom';
+import {ConfigProvider, Loading} from '@alifd/next';
 
 import './lib';
 
 import Layout from './layouts/MainLayout';
-import { LANGUAGE_KEY, REDUX_DEVTOOLS } from './constants';
+import {LANGUAGE_KEY, REDUX_DEVTOOLS} from './constants';
 
 import Login from './pages/Login';
 import Namespace from './pages/NameSpace';
@@ -49,7 +49,7 @@ import RolesManagement from './pages/AuthorityControl/RolesManagement';
 import Welcome from './pages/Welcome/Welcome';
 
 import reducers from './reducers';
-import { changeLanguage } from './reducers/locale';
+import {changeLanguage} from './reducers/locale';
 
 import './index.scss';
 import PropTypes from 'prop-types';

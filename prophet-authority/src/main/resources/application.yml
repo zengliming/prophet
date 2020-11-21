@@ -11,8 +11,18 @@ spring:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
     sentinel:
       transport:
-        port: 8720
         dashboard: localhost:9999
+      # 开启懒加载
+      eager: true
+      datasource:
+        ns:
+          nacos:
+            serverAdd: ${spring.cloud.nacos.discovery.server-addr}
+            dataId: ${spring.application.name}-flow-rules
+            groupId: DEFAULT_GROUP
+            rule_type: flow
+            dataType: json
+
   datasource:
     url: jdbc:mysql://localhost:3306/authority?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
@@ -24,3 +34,9 @@ spring:
     sql-script-encoding: UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: /actuator/sentinel

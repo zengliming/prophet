@@ -13,9 +13,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Field, Form, Input, Select, Dialog, ConfigProvider } from '@alifd/next';
-import { connect } from 'react-redux';
-import { getNamespaces } from '../../../reducers/namespace';
+import {ConfigProvider, Dialog, Field, Form, Input, Select} from '@alifd/next';
+import {connect} from 'react-redux';
+import {getNamespaces} from '../../../reducers/namespace';
 
 const FormItem = Form.Item;
 const { Option } = Select;

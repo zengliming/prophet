@@ -13,7 +13,7 @@
 
 import projectConfig from './config';
 import $ from 'jquery';
-import { Message } from '@alifd/next';
+import {Message} from '@alifd/next';
 
 function goLogin() {
   const url = window.location.href;

@@ -7,5 +7,6 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('com.baomidou:mybatis-plus-boot-starter:3.4.0')
     compile('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
+    compile('com.alibaba.csp:sentinel-datasource-nacos')
     runtimeOnly('mysql:mysql-connector-java')
 }
