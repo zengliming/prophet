@@ -3,7 +3,6 @@ package cn.zlmisme.prophet.sentinel.common.rule;
 import cn.zlmisme.prophet.sentinel.common.properties.RuleConfig;
 import com.alibaba.csp.sentinel.datasource.ReadableDataSource;
 import com.alibaba.csp.sentinel.datasource.nacos.NacosDataSource;
-import com.alibaba.csp.sentinel.slots.block.authority.AuthorityRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
 import com.alibaba.fastjson.JSON;
@@ -11,7 +10,6 @@ import com.alibaba.fastjson.TypeReference;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;

@@ -1,14 +1,20 @@
-server:
-  port: 8080
 spring:
-  application:
-    name: prophet-authority
-  cloud:
-    nacos:
+  zipkin:
+    locator:
       discovery:
-        server-addr: 127.0.0.1:8848
-      config:
-        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        enabled: true
+    sender:
+      type: web
+    baseUrl: http://prophet-zipkin-server/
+    enabled: true
+    discovery-client-enabled: true
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
+  cloud:
     sentinel:
       transport:
         dashboard: localhost:9999
@@ -25,9 +31,3 @@ spring:
     sql-script-encoding: UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: /actuator/sentinel

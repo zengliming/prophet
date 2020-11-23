@@ -23,7 +23,6 @@ import com.alibaba.csp.sentinel.util.StringUtil;
 import com.alibaba.nacos.api.config.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import sun.security.action.GetLongAction;
 
 import java.util.ArrayList;
 import java.util.List;

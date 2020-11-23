@@ -20,7 +20,6 @@ import com.alibaba.csp.sentinel.dashboard.auth.AuthService;
 import com.alibaba.csp.sentinel.dashboard.client.SentinelApiClient;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.gateway.ApiDefinitionEntity;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.gateway.ApiPredicateItemEntity;
-import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.ParamFlowRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.discovery.MachineInfo;
 import com.alibaba.csp.sentinel.dashboard.domain.Result;
 import com.alibaba.csp.sentinel.dashboard.domain.vo.gateway.api.AddApiReqVo;

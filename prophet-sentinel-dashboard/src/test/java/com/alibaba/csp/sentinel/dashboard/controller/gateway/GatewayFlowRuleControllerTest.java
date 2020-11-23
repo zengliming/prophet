@@ -52,8 +52,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static com.alibaba.csp.sentinel.slots.block.RuleConstant.*;
 import static com.alibaba.csp.sentinel.adapter.gateway.common.SentinelGatewayConstants.*;
+import static com.alibaba.csp.sentinel.slots.block.RuleConstant.*;
 import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.*;
 

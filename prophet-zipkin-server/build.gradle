@@ -1,0 +1,10 @@
+dependencies {
+    compile(project(":prophet-commons"))
+    compile(project(":prophet-sentinel-common"))
+    compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('io.zipkin.java:zipkin-server:2.12.3') {
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-slf4j-impl'
+    }
+    compile('io.zipkin.java:zipkin-autoconfigure-ui:2.12.3')
+}

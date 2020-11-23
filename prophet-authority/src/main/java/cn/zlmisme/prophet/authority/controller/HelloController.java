@@ -1,7 +1,6 @@
 package cn.zlmisme.prophet.authority.controller;
 
 import cn.zlmisme.prophet.authority.service.HelloService;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

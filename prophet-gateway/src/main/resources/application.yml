@@ -4,6 +4,22 @@ nacos:
       route:
         dataId: gateway-routes
         groupId: DEFAULT_GROUP
+spring:
+  zipkin:
+    locator:
+      discovery:
+        enabled: true
+    sender:
+      type: web
+    baseUrl: http://prophet-zipkin-server/
+    enabled: true
+    discovery-client-enabled: true
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
 gateway:
   blacklists:
     - uri:

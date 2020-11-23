@@ -5,4 +5,6 @@ include 'prophet-gateway'
 include 'prophet-nacos'
 include 'prophet-sentinel-dashboard'
 include 'prophet-sentinel-common'
+include 'prophet-zipkin-server'
+include 'prophet-feign'
 

@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: prophet-authority
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+        prefix: ${spring.application.name}
+        group: DEFAULT_GROUP
+    sentinel:
+      transport:
+        dashboard: localhost:9999
+      # 开启懒加载
+      eager: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: /actuator/sentinel

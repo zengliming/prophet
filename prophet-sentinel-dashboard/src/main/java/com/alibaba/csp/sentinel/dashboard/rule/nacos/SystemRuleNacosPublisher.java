@@ -16,7 +16,6 @@
 package com.alibaba.csp.sentinel.dashboard.rule.nacos;
 
 import cn.zlmisme.prophet.commons.constants.GlobalConstants;
-import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.AuthorityRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.SystemRuleEntity;
 import com.alibaba.csp.sentinel.dashboard.rule.DynamicRulePublisher;
 import com.alibaba.csp.sentinel.datasource.Converter;

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: prophet-zipkin-server
+  cloud:
+    nacos:
+      discovery:
+        service: ${spring.application.name}
+        server-addr: 127.0.0.1:8848
+server:
+  port: 9001
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

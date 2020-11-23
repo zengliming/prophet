@@ -2,15 +2,11 @@ package cn.zlmisme.prophet.gateway.config;
 
 import cn.zlmisme.prophet.commons.vo.BaseResponse;
 import com.alibaba.cloud.sentinel.SentinelProperties;
-import com.alibaba.cloud.sentinel.SentinelWebFluxAutoConfiguration;
 import com.alibaba.csp.sentinel.adapter.gateway.sc.callback.GatewayCallbackManager;
 import com.alibaba.csp.sentinel.adapter.reactor.SentinelReactorTransformer;
 import com.alibaba.csp.sentinel.adapter.spring.webflux.SentinelWebFluxFilter;
-import com.alibaba.csp.sentinel.adapter.spring.webflux.callback.WebFluxCallbackManager;
 import com.alibaba.csp.sentinel.adapter.spring.webflux.exception.SentinelBlockExceptionHandler;
 import org.springframework.beans.factory.ObjectProvider;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
@@ -23,12 +19,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import org.springframework.web.reactive.result.view.ViewResolver;
-import org.springframework.web.server.ServerWebExchange;
-import reactor.core.publisher.Mono;
 
 import javax.annotation.PostConstruct;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import static org.springframework.web.reactive.function.BodyInserters.fromObject;

@@ -3,8 +3,6 @@ package cn.zlmisme.prophet.sentinel.common.rule;
 import cn.zlmisme.prophet.sentinel.common.properties.RuleConfig;
 import com.alibaba.csp.sentinel.datasource.ReadableDataSource;
 import com.alibaba.csp.sentinel.datasource.nacos.NacosDataSource;
-import com.alibaba.csp.sentinel.slots.block.degrade.DegradeRule;
-import com.alibaba.csp.sentinel.slots.block.degrade.DegradeRuleManager;
 import com.alibaba.csp.sentinel.slots.system.SystemRule;
 import com.alibaba.csp.sentinel.slots.system.SystemRuleManager;
 import com.alibaba.fastjson.JSON;

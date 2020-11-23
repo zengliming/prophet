@@ -4,8 +4,10 @@ dependencies {
     compile(project(":prophet-authority-api"))
     compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config')
     compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery')
-    compile('org.springframework.cloud:spring-cloud-config-client')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('com.baomidou:mybatis-plus-boot-starter:3.4.0')
     runtimeOnly('mysql:mysql-connector-java')
+    compile('org.springframework.cloud:spring-cloud-starter-zipkin:2.1.0.RELEASE')
+    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin')
 }
