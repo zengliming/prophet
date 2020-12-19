@@ -1,0 +1,10 @@
+dependencies {
+    compile(project(":prophet-commons"))
+    compile("com.alibaba.cloud:spring-cloud-starter-dubbo")
+    compile("com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery")
+
+}
+
+test {
+    useJUnitPlatform()
+}

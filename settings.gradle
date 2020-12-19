@@ -7,4 +7,5 @@ include 'prophet-sentinel-dashboard'
 include 'prophet-sentinel-common'
 include 'prophet-zipkin-server'
 include 'prophet-feign'
+include 'prophet-dubbo'
 

@@ -1,0 +1,13 @@
+dubbo:
+  scan:
+    base-packages: cn.zlmisme.prophet
+  protocol:
+    name: dubbo
+    port: -1
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  main:
+    allow-bean-definition-overriding: true
