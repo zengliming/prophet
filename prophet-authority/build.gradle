@@ -3,6 +3,7 @@ dependencies {
     compile(project(":prophet-sentinel-common"))
     compile(project(":prophet-authority-api"))
     compile(project(":prophet-dubbo"))
+    compile(project(":prophet-monitor-client"))
     compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config')
     compile('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery')
     compile('org.springframework.boot:spring-boot-starter-web')

@@ -7,6 +7,8 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        metadata:
+          management.context-path: /actuator/sentinel
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         file-extension: yaml
@@ -22,4 +24,5 @@ management:
   endpoints:
     web:
       exposure:
-        include: /actuator/sentinel
+        include: ["health","info","mappings","env"]
+      base-path: /actuator/sentinel

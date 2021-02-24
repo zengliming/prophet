@@ -1,0 +1,13 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health","info","mappings","env"]
+      base-path: /actuator/sentinel
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        metadata:
+          management.context-path: /actuator/sentinel

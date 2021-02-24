@@ -29,7 +29,8 @@ management:
   endpoints:
     web:
       exposure:
-        include: /actuator/sentinel
+        include: ["health","info","mappings","env"]
+      base-path: /actuator/sentinel
 ribbon:
   http:
     client:
